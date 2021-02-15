@@ -1,0 +1,2 @@
+Y_COLUMN = "FIRST"
+X_COLUMN = "THIRD"
