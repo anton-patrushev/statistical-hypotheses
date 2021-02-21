@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def variance(array, length, math_expectation):
 
     # variable prb is for probability
@@ -11,7 +14,9 @@ def variance(array, length, math_expectation):
         sum += prb * pow(array[i] - math_expectation, 2)
 
     # returning expectation as sum
-    return float(sum)
+    value = float(sum)
+
+    return value
 
 
 def get_variance_from_column(column, math_expectation):
