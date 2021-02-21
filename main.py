@@ -6,6 +6,7 @@ from expect import get_math_expectation_from_column
 from variance import get_variance_from_column
 from deviation import get_standart_deviation
 from confidence_intervals import get_confidence_interval_for_mean_from_column, get_confidence_interval_for_variance_from_column
+from hypothesis_test import test_mean_equal_from_column
 
 
 def read_data():
@@ -56,6 +57,15 @@ def main():
         A=lower_y_variance_bound, B=upper_y_variance_bound))
     print("Confidence inverval for X variance = ({A}, {B})".format(
         A=lower_x_variance_bound, B=upper_x_variance_bound))
+
+    lower, upper, K, is_means_equal = test_mean_equal_from_column(X, Y)
+    print("(A, B) = ({A}, {B})".format(A=lower, B=upper))
+    print("K = {K}".format(K=K))
+
+    if is_means_equal:
+        print("mean X is equal to mean Y")
+    else:
+        print("mean X is not equal to mean Y")
 
     return 0
 
